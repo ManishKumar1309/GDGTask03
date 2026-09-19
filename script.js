@@ -53,33 +53,24 @@ document.addEventListener("keydown",function(attack){
             let playerPos=player.offsetLeft;
             let enemyPos=enemy.offsetLeft;
             let distance=Math.abs(playerPos-enemyPos);
-            if(distance<150){
+            if(distance<200){
                 let enemyImg=document.querySelector(".enemy img");
 
                 enemyImg.src="assets/Enemy/Hit/Hit_01.png";
-        setTimeout(function(){
-            enemyImg.src="assets/Enemy/Hit/Hit_02.png";
-        },100);
+            setTimeout(function(){
+                enemyImg.src="assets/Enemy/Hit/Hit_02.png";
+            },100);
 
-        setTimeout(function(){
-            enemyImg.src="assets/Enemy/Hit/Hit_03.png";
-        },200);
+            setTimeout(function(){
+                enemyImg.src="assets/Enemy/Hit/Hit_03.png";
+            },200);
 
-        setTimeout(function(){
-            enemyImg.src="assets/Enemy/Hit/Hit_04.png";
-        },300);
-
-        setTimeout(function(){
-            enemyImg.src="assets/Enemy/Hit/Hit_05.png";
-        },400);
-
-        setTimeout(function(){
-            enemyImg.src="assets/Enemy/Hit/Hit_06.png";
-        },500);
-        setTimeout(function(){
-            enemyImg.src="assets/Enemy_Idle (1).svg";
-        },600);
-
+            setTimeout(function(){
+                enemyImg.src="assets/Enemy/Hit/Hit_04.png";
+            },300);
+            setTimeout(function(){
+                enemyImg.src="assets/Enemy_Idle (1).svg";
+            },400);
             }
         }
 
@@ -172,4 +163,76 @@ document.addEventListener("keydown",function(walk){
         
     }
 });
+
+let enemyPos = 600;
+setInterval(function(){
+    let random = Math.random();
+    if(random < 0.3){
+        enemyPos -= 20;
+        enemy.style.left = `${enemyPos}px`;
+    }
+    else if(random < 0.6){
+        enemyPos += 20;
+        enemy.style.left = `${enemyPos}px`;
+    }
+    else if(random < 0.8){
+        enemyImg.src="assets/Enemy_Idle (1).svg";
+    }
+    else{
+        enemyAttack();
+    }
+}, 1000);
+
+let enemyImg = document.querySelector(".enemy img");
+function enemyAttack(){
+    enemyImg.src="assets/Enemy/Attack/Attack_01.png";
+    setTimeout(function(){
+        enemyImg.src="assets/Enemy/Attack/Attack_02.png";
+    },100);
+
+    setTimeout(function(){
+        enemyImg.src="assets/Enemy/Attack/Attack_03.png";
+    },200);
+
+    setTimeout(function(){
+        enemyImg.src="assets/Enemy/Attack/Attack_04.png";
+    },300);
+
+    setTimeout(function(){
+        enemyImg.src="assets/Enemy/Attack/Attack_05.png";
+    },400);
+
+    setTimeout(function(){
+        enemyImg.src="assets/Enemy_Idle (1).svg";
+        checkPlayerHit();
+    },500)
+}
+
+
+function checkPlayerHit(){
+    let playerPos=player.offsetLeft;
+    let enemyPos=enemy.offsetLeft;
+    let distance=Math.abs(playerPos-enemyPos);
+
+    if(distance<200){
+            playerImg.src="assets/Player/Hit/Hit_01.png";
+        setTimeout(function(){
+            playerImg.src="assets/Player/Hit/Hit_02.png";
+        },100);
+
+        setTimeout(function(){
+            playerImg.src="assets/Player/Hit/Hit_03.png";
+        },200);
+
+        setTimeout(function(){
+            playerImg.src="assets/Player/Hit/Hit_04.png";
+        },300);
+        setTimeout(function(){
+            playerImg.src="assets/Player/Hit/Hit_05.png";
+        },400);
+        setTimeout(function(){
+            playerImg.src="assets/Player_Idle.svg";
+        },500);
+    }
+}
 
