@@ -15,7 +15,7 @@ body{
     background-image: url("assets/Environment/bgTop.png");
     background-repeat: no-repeat;
     background-size: cover;
-    z-index: -1;
+    /* z-index: -1; */
 }
 
 .header{
@@ -39,6 +39,10 @@ body{
     background-image: url("assets/Environment/bgFoot.png");
     background-size: cover;
     background-repeat: no-repeat;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
 }
 
 .header{
@@ -70,3 +74,97 @@ body{
     background-color: rgba(127, 142, 255, 0.121);
     border-radius: 50px;
 }
+
+.pause{
+    height: 40px;
+    width: 150px;
+    color: aliceblue;
+    padding-top: 0.7rem;
+    text-align: center;
+    background-color: rgba(127, 142, 255, 0.121);
+    border-radius: 50px;
+    cursor: pointer;
+    user-select: none;
+}
+ 
+.heart.dead{
+    color: black;
+}
+ 
+.hud{
+    display: flex;
+    gap: 1rem;
+}
+ 
+.left,.jump,.right,.action{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: aliceblue;
+    background-color: rgba(255, 255, 255, 0.25);
+    border: 2px solid aliceblue;
+    border-radius: 50%;
+    cursor: pointer;
+    user-select: none;
+    touch-action: none;
+}
+ 
+.left,.jump,.right{
+    height: 70px;
+    width: 70px;
+    font-size: 28px;
+}
+ 
+.action{
+    height: 90px;
+    width: 90px;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: rgba(245, 30, 30, 0.5);
+}
+ 
+.left:active,.jump:active,.right:active,.action:active{
+    transform: scale(0.92);
+}
+ 
+.result{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.75);
+    color: aliceblue;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    z-index: 10;
+}
+ 
+.result.show{
+    display: flex;
+}
+ 
+.resultText{
+    font-size: 5rem;
+}
+ 
+.restart{
+    padding: 0.7rem 2rem;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+
+.player,.enemy{
+    width: 250px;
+    height: 240px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+

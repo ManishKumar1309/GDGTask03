@@ -10,10 +10,11 @@
 
     <div class="upperPart">
         <div class="header">
-            <div class="playerHP">&hearts; &hearts; &hearts; &hearts;<br><p>Player HP</p></div>
-            <div class="score">Score : 999</div>
-            <div class="timer">Timer : 1:00</div>
-            <div class="enemyHP">&hearts; &hearts; &hearts; &hearts;<br><p>Enemy HP</p></div>
+            <div class="playerHP"><span class="heart">&hearts;</span><span class="heart">&hearts;</span><span class="heart">&hearts;</span><span class="heart">&hearts;</span><br><p>Player HP</p></div>
+            <div class="score">Score : 0</div>
+            <div class="pause">Pause</div>
+            <!-- <div class="timer">Timer : 1:00</div> -->
+            <div class="enemyHP"><span class="heart">&hearts;</span><span class="heart">&hearts;</span><span class="heart">&hearts;</span><span class="heart">&hearts;</span><br><p>Enemy HP</p></div>
         </div>
 
         <div class="fightArea">
@@ -25,13 +26,18 @@
     <div class="lowerPart">
 
         <div class="hud">
-            <div class="left"></div>
-            <div class="jump"></div>
-            <div class="right"></div>
+            <div class="left">&larr;</div>
+            <div class="jump">&uarr;</div>
+            <div class="right">&rarr;</div>
         </div>
 
-        <div class="action"></div>
+        <div class="action">ATTACK</div>
 
+    </div>
+
+     <div class="result">
+        <h1 class="resultText"></h1>
+        <button class="restart">Restart</button>
     </div>
 
     <script src="script.js"></script>
